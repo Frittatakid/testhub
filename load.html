@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<!--[metadata]>
++++
+title = "load"
+description = "The load command description and usage"
+keywords = ["stdin, tarred, repository"]
+[menu.main]
+parent = "smn_cli"
++++
+<![end-metadata]-->
+
+<h1 id="load">load</h1>
+<pre><code>Usage: docker load [OPTIONS]
+
+Load an image from a tar archive or STDIN
+
+  --help             Print usage
+  -i, --input=&quot;&quot;     Read from a tar archive file, instead of STDIN. The tarball may be compressed with gzip, bzip, or xz
+  -q, --quiet        Suppress the load output. Without this option, a progress bar is displayed.</code></pre>
+<p>Loads a tarred repository from a file or the standard input stream. Restores both images and tags.</p>
+<pre><code>$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+$ docker load &lt; busybox.tar.gz
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+busybox             latest              769b9341d937        7 weeks ago         2.489 MB
+$ docker load --input fedora.tar
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+busybox             latest              769b9341d937        7 weeks ago         2.489 MB
+fedora              rawhide             0d20aec6529d        7 weeks ago         387 MB
+fedora              20                  58394af37342        7 weeks ago         385.5 MB
+fedora              heisenbug           58394af37342        7 weeks ago         385.5 MB
+fedora              latest              58394af37342        7 weeks ago         385.5 MB</code></pre>
+</body>
+</html>

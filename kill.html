@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<!--[metadata]>
++++
+title = "kill"
+description = "The kill command description and usage"
+keywords = ["container, kill, signal"]
+[menu.main]
+parent = "smn_cli"
++++
+<![end-metadata]-->
+
+<h1 id="kill">kill</h1>
+<pre><code>Usage: docker kill [OPTIONS] CONTAINER [CONTAINER...]
+
+Kill a running container using SIGKILL or a specified signal
+
+  --help                 Print usage
+  -s, --signal=&quot;KILL&quot;    Signal to send to the container</code></pre>
+<p>The main process inside the container will be sent <code>SIGKILL</code>, or any signal specified with option <code>--signal</code>.</p>
+<blockquote>
+<p><strong>Note:</strong> <code>ENTRYPOINT</code> and <code>CMD</code> in the <em>shell</em> form run as a subcommand of <code>/bin/sh -c</code>, which does not pass signals. This means that the executable is not the container’s PID 1 and does not receive Unix signals.</p>
+</blockquote>
+</body>
+</html>
